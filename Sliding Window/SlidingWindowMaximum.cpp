@@ -2,8 +2,9 @@
 // Leetcode Link:  https://leetcode.com/problems/sliding-window-maximum/
 // GeeksforGeeks Link: https://practice.geeksforgeeks.org/problems/count-occurences-of-anagrams5839/1
 
-       
-int i=0, j=0;
+        vector<int> maxSlidingWindow(vector<int>& nums, int k) 
+       {
+        int i=0, j=0;
         int n=nums.size();
         list<int> l;
         vector<int> v;
