@@ -21,17 +21,20 @@
             if(j-i+1 < k)
                 j++;
             else if(j-i+1 == k)
-            {
-                v.push_back(l.front());
-                j++;
-            }
-            else
-            {
-                if(l.front()==nums[i])
+            {   if(l.front()!=nums[i])
+                 {
+                   v.push_back(l.front());
+                   j++;
+                   i++;
+                 }
+           
+               else if(l.front()==nums[i])
+               {
                     l.pop_front();
-                v.push_back(l.front());
-                i++;
-                j++;
+                    v.push_back(l.front());
+                    i++;
+                    j++;
+               }
             }
         }
         return v;
