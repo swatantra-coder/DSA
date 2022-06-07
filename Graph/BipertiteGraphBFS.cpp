@@ -1,3 +1,5 @@
+************************************************ BFS Bipertite *********************************************
+
 bool bipertite(int s, vector<int> adj[],int colo[])
 {
   queue<int> q;
@@ -36,3 +38,24 @@ bool checkbipertite(vector<int> adj[],int n)
   
   return true;
 }
+************************************************* DFS Bipertite ******************************************************
+bool bipertiteDFS(int s,vector<int> adj[],int colo[])
+{
+  if(colo[s]==-1)
+    colo[s]=1;
+  
+  for(auto it:adj[s])
+  {
+    if(colo[it]==-1)
+    {
+      colo[it]=1-colo[s];
+      if(!bipertiteDFS(it,adj,colo)
+         return false;
+    }
+    else if(colo[it]==colo[s])
+         return false;
+  }
+         
+   return true;
+}
+         
